@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .highlight{
+            color: red;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div id="content">
+        <p id="message">Click the button change this message</p>
+    </div>
+    <button onclick="changemessage()">change message</button>
+    <button onclick="addnewelement()">add new element</button>
+    <script>
+        function changemessage(){
+            let messageelement=document.getElementById("message");
+            // change text context 
+            messageelement.textContent="Message changed using textcontent"
+            //change inner html
+            messageelement.innerHTML +="<br> Added using innerHTML.";
+            //APPLY STYLES
+            messageelement.style.color="blue";
+            messageelement.style.fontSize="1.2em";
+        }
+        function addnewelement(){
+            let contentdiv =document.querySelector("#content");
+            let newelement = document.createElement("p");
+            newelement.textContent="this is a new paragraph";
+            newelement.classList.add("highlight");
+            contentdiv.appendChild(newelement);
+        }
+    </script>
+</body>
+</html>
